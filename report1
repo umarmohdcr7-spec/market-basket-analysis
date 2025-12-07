@@ -1,0 +1,53 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Data Mining Report}} \\[8pt]
+    {\Large \textbf{Market Basket Analysis}} \\[16pt]
+
+    \textbf{Mohammad Umar} \\
+    \textbf{Yugal Verma} \\
+    \textbf{Adam Bielecki} \\
+    \textbf{Verna Perumal} \\
+    \textbf{Deniz Kormaz} \\
+    \textbf{Samar Labidi} \\[16pt]
+
+    \today
+\end{center}
+
+\section{Exercise X: Market Basket Analysis}
+
+\subsection*{Introduction}
+This exercise applies Market Basket Analysis to a grocery transaction dataset.
+Each row represents a single shopping basket containing one or more items.
+The objective is to identify frequent item combinations and derive association rules that describe which products tend to be purchased together.
+
+\subsection*{Methodology}
+The raw file \texttt{groceries3.csv} was loaded and converted into a list of transactions, where each transaction is a list of item names.
+Using the \texttt{TransactionEncoder} from \texttt{mlxtend}, the transactions were transformed into a one-hot encoded matrix.
+
+The Apriori algorithm was applied with a minimum support threshold of 1\%.
+From the resulting frequent itemsets, association rules were generated and evaluated using support, confidence and lift.
+
+TBA
+
+Rules with lift greater than 1 indicate that the antecedent and consequent co-occur more frequently than expected under independence.
+For example, a rule of the form
+\[
+\{\texttt{butter}\} \Rightarrow \{\texttt{whole milk}\}
+\]
+with high confidence and lift suggests that customers who buy butter are more likely than average to also buy whole milk.
+
+\subsection*{Conclusion}
+The tables show that Market Basket Analysis can uncover meaningful patterns in grocery transaction data.
+Frequent items and itemsets highlight core products and common shopping combinations, while association rules with high lift reveal non-random relationships between items.
+These insights can support product placement, bundling strategies and recommendation systems.
+
+\end{document}
